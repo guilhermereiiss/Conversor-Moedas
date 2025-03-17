@@ -1,54 +1,97 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```markdown
+# Conversor de Moedas em React
 
-## Expanding the ESLint configuration
+Este é um projeto simples de **Conversor de Moedas** construído com **React**. Ele permite a conversão de diferentes moedas em tempo real, utilizando a API **AwesomeAPI** para buscar as taxas de câmbio atualizadas.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![Captura de Tela](./src/assets/Screenshot_19.png)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Tecnologias Utilizadas
+
+- **React**: Biblioteca para construir interfaces de usuário.
+- **Tailwind CSS**: Framework de estilização utilitário para criar a interface do usuário.
+- **API AwesomeAPI**: Para buscar as taxas de câmbio entre diferentes moedas.
+
+## Funcionalidades
+
+- **Conversão de moedas**: O usuário pode converter valores entre diferentes moedas como **USD**, **EUR**, **BRL**, **GBP**, entre outras.
+- **Escolher moedas**: O usuário pode selecionar as moedas de origem e destino da conversão.
+- **Exibição do valor convertido**: O valor convertido é mostrado em tempo real assim que o usuário insere o valor e seleciona as moedas.
+
+## Como Usar
+
+### Requisitos
+
+- **Node.js** e **npm** (ou **yarn**) instalados em seu computador.
+
+### Passos para rodar o projeto localmente
+
+1. Clone este repositório para o seu computador:
+
+   ```bash
+   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   cd nome-do-repositorio
+   ```
+
+2. Instale as dependências do projeto:
+
+   ```bash
+   npm install
+   ```
+
+   ou
+
+   ```bash
+   yarn
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm start
+   ```
+
+   ou
+
+   ```bash
+   yarn start
+   ```
+
+4. Abra o navegador e acesse o seguinte endereço:
+
+   ```
+   http://localhost:3000
+   ```
+
+### Como usar o conversor
+
+1. Selecione a moeda de origem e a moeda de destino.
+2. Digite o valor que deseja converter.
+3. O valor convertido será exibido abaixo do campo de entrada em tempo real.
+
+## Estrutura do Projeto
+
+```
+/public
+  - index.html (arquivo HTML principal)
+/src
+  - App.tsx (componente principal que contém a lógica de conversão)
+  - App.css (estilos principais)
+  - assets/5082433-conceitos-de-conversao-de-moeda-vetor.jpg (imagem para ilustrar a página)
+/package.json (arquivo de dependências)
+```
+---
+
+## Contribuições
+
+Se você deseja contribuir para este projeto, fique à vontade para fazer um **fork** do repositório e enviar um **pull request** com suas melhorias.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
